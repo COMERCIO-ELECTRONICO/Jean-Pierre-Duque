@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,14 +7,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+id: number;
   constructor(
     private readonly _router: Router,
 
-    private readonly _router1: Router
+    private readonly _router1: Router,
+
+    private readonly _activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+     // observable son asyn
+     this._activatedRoute
+     .params
+     .subscribe(
+       (resultado) => {
+         console.log('resultado observable');
+         console.log(resultado);
+         this.id = resultado.id;
+         console.log('valor de id', this.id);
+       },
+       (error) => {
+         console.error(error);
+       }
+     );
   }
 
   irAUsuarioListar() {

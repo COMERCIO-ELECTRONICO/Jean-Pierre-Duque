@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +21,8 @@ import { AppRoutesComponent } from './app.routes';
     BrowserModule,
     AppRoutesComponent,
     UsuarioModule,
-    PokemonModule
+    PokemonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

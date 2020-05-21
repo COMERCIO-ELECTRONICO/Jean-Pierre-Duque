@@ -1,1 +1,183 @@
+<!--
 <p>login works!</p>
+  <h1>
+    variables html #
+  </h1>
+  <form (ngSubmit)="obtenerFormulario(formularioUsario)" #formularioUsario="ngForm">
+
+    <h4>Estado formulario</h4>
+    <h5>
+      <pre>
+        valid: {{formularioUsario.valid}}
+        invalid: {{formularioUsario.invalid}}
+        dirty: {{formularioUsario.dirty}}
+        touched: {{formularioUsario.touched}}
+        untouched: {{formularioUsario.untouched}}
+      </pre>
+    </h5>
+
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      [(ngModel)]="email"
+        name="email"
+        placeholder="ejemplo"
+        minlength="3"
+        required
+        pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+        #campoEmail="ngModel">
+      <h4>
+        Estados del campo email
+      </h4>
+      <pre>
+        valid: {{campoEmail.valid}}
+        invalid: {{campoEmail.invalid}}
+        dirty: {{campoEmail.dirty}}
+        touched: {{campoEmail.touched}}
+        untouched: {{campoEmail.untouched}}
+      </pre>
+
+      {{campoEmail.errors | json}}
+
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div
+    class="alert alert-danger"
+    role="alert"
+    *ngIf="(campoEmail.errors)
+    && campoEmail.dirty === true">
+      <p
+      *ngIf="campoEmail.errors.required">
+        Campo email requerido
+      </p>
+      <p
+      *ngIf="campoEmail.errors.minlength">
+        minimo 3
+      </p>
+      <p
+      *ngIf="campoEmail.errors.pattern">
+        No es email
+      </p>
+
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+      type="password"
+      class="form-control"
+      id="exampleInput"
+      aria-describedby="emai"
+      [(ngModel)]="contrasena"
+        name="contrasena"
+        placeholder="****"
+        minlength="4"
+        required
+        #campoContrasena="ngModel">
+    </div>
+
+
+    <button
+    [disabled]="formularioUsario.invalid"
+    type="submit"
+    class="btn btn-primary">
+    Submit</button>
+  </form>
+-->
+<h1><strong>
+    Formulario
+  </strong></h1>
+<form (ngSubmit)="obtenerFormulario(formularioUsuario)" #formularioUsuario="ngForm">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputName">Nombre:</label>
+      <input type="text" class="form-control" id="validationServer01" placeholder="Nombre" [(ngModel)]="nombre"
+        name="nombre" minlength="2" pattern="[a-zA-Z ]{2,254}" #campoNombre="ngModel" required>
+      <div class="alert alert-danger" role="alert" *ngIf="(campoNombre.errors) && campoNombre.dirty === true">
+        <h6 *ngIf="campoNombre.errors.required">
+          Este campo no puede ir vacio
+        </h6>
+        <h6 *ngIf="campoNombre.errors.minlength">
+          Minimo debe contener 2 caracteres
+        </h6>
+        <h6 *ngIf="campoNombre.errors.pattern">
+          Este campo solo debe tener letras
+        </h6>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="inputLastName">Apellido:</label>
+      <input type="text" class="form-control" id="validationServer02" placeholder="Apellido" [(ngModel)]="apellido"
+        name="apellido" minlength="2" pattern="[a-zA-Z ]{2,254}" #campoApellido="ngModel" required>
+      <div class="alert alert-danger" role="alert" *ngIf="(campoApellido.errors) && campoApellido.dirty === true">
+        <h6 *ngIf="campoApellido.errors.required">
+          Este campo no puede ir vacio
+        </h6>
+        <h6 *ngIf="campoApellido.errors.minlength">
+          Minimo debe contener 2 caracteres
+        </h6>
+        <h6 *ngIf="campoApellido.errors.pattern">
+          Este campo solo debe tener letras
+        </h6>
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputEmail">Correo:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ejemplo@email.com"
+        [(ngModel)]="email" name="email" minlength="3" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" #campoEmail="ngModel"
+        required>
+      <div class="alert alert-danger" role="alert" *ngIf="(campoEmail.errors) && campoEmail.dirty === true">
+        <h6 *ngIf="campoEmail.errors.required">
+          Este campo no puede ir vacio
+        </h6>
+        <h6 *ngIf="campoEmail.errors.minlength">
+          Minimo debe contener 3 caracteres
+        </h6>
+        <h6 *ngIf="campoEmail.errors.pattern">
+          Introdusca una dirección de correo valida
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationPassword1">Contraseña:</label>
+      <input type="password" class="form-control" id="inputPassword1" placeholder="Contraseña" [(ngModel)]="contrasena1"
+        name="contrasena1" minlength="8" #campoContrasena1="ngModel" required>
+      <div class="alert alert-danger" role="alert" *ngIf="(campoContrasena1.errors) && campoContrasena1.dirty === true">
+        <h6 *ngIf="campoContrasena1.errors.required">
+          Este campo no puede ir vacio
+        </h6>
+        <h6 *ngIf="campoContrasena1.errors.minlength">
+          Minimo debe contener 8 caracteres
+        </h6>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="inputPassword2">Repetir Contraseña:</label>
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Repetir contraseña"
+        [(ngModel)]="contrasena2" name="contrasena2" minlength="8" #campoContrasena2="ngModel" required>
+      <div class="alert alert-danger" role="alert" *ngIf="(campoContrasena1.errors) && campoContrasena1.dirty === true">
+        <h6 *ngIf="campoContrasena1.errors.required">
+          Este campo no puede ir vacio
+        </h6>
+        <h6 *ngIf="campoContrasena1.errors.minlength">
+          Minimo debe contener 8 caracteres
+        </h6>
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="(contrasena1 !== campoContrasena2.value)">
+        <h6>
+          Contraseña no coincide
+        </h6>
+      </div>
+    </div>
+  </div>
+    <button [disabled]="formularioUsuario.invalid" class="btn btn-primary" type="submit">Iniciar
+    Sesión</button>
+
+</form>
