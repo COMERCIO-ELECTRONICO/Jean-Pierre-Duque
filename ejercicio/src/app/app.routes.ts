@@ -1,3 +1,4 @@
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/Router';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +18,14 @@ const rutas: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'estudiante/perfil',
+    component: PerfilUsuarioComponent,
+  },
+  {
+    path: 'profesor/perfil',
+    component: PerfilUsuarioComponent,
   },
   {
     path: '',

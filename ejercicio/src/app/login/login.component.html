@@ -1,1 +1,66 @@
-<p>login works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4" style="text-align: center;">
+      <h1>Formulario</h1>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <p-autoComplete
+      [(ngModel)]="valorAutocomplete"
+      [suggestions]="sugerencias"
+      (completeMethod)="buscarSugerencia($event)"
+      [dropdown]="true"
+      (onSelect)="valorSeleccionado($event)"
+      >
+      </p-autoComplete>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Correo</mat-label>
+          <input
+          type="email"
+          matInput
+          placeholder="ejemplo@xxxx.com"
+          required
+          [(ngModel)]="correo"
+          name="correo"
+          >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Contraseña</mat-label>
+          <input
+          type="password"
+          matInput
+          required
+          placeholder="********"
+          [(ngModel)]="pass"
+          name="pass"
+          >
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="btn
+      btn-outline-primary
+      btn-block"
+      (click)="ingresar()"
+      >
+        Ingresar
+      </button>
+    </div>
+    <div class="col-sm-6">
+      <button
+      class="btn
+      btn-outline-primary
+      btn-block">
+        Crear Usuario
+      </button>
+    </div>
+  </div>
+</div>
