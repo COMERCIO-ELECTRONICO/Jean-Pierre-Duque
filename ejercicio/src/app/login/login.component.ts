@@ -45,16 +45,12 @@ export class LoginComponent implements OnInit {
   ingresar() {
     console.log(this.valorAutocomplete);
 
-    if (this.pass === '1234') {
-      if (this.seleccionadoValor === 'Estudiante') {
+    if (this.pass === '1234' && this.seleccionadoValor === 'Estudiante') {
         alert('Es estudiante ' + this.correo);
         this._router.navigate(['/estudiante', 'perfil']);
-      }
-    } else if (this.pass === '12345') {
-      if (this.seleccionadoValor === 'Profesor') {
+    } else if (this.pass === '12345' && this.seleccionadoValor === 'Profesor') {
         alert('Es profesor ' + this.correo);
         this._router.navigate(['/profesor', 'perfil']);
-      }
     } else {
       alert('Datos no validos');
     }
