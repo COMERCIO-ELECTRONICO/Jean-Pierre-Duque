@@ -48,23 +48,16 @@ export class LoginComponent implements OnInit {
     if (this.pass === '1234') {
       if (this.seleccionadoValor === 'Estudiante') {
         alert('Es estudiante ' + this.correo);
-        this._router.navigate(
-          ['/estudiante', 'perfil']
-        )
+        this._router.navigate(['/estudiante', 'perfil']);
       }
-    } else {
-      alert('Datos no validos');
-    }
-
-    if (this.pass === '1234') {
+    } else if (this.pass === '12345') {
       if (this.seleccionadoValor === 'Profesor') {
         alert('Es profesor ' + this.correo);
-        this._router.navigate(
-          ['/profesor', 'perfil']
-        )
+        this._router.navigate(['/profesor', 'perfil']);
       }
     } else {
       alert('Datos no validos');
     }
   }
 }
+
