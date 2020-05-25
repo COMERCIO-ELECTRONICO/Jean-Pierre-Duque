@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
     } else {
       alert('Datos no validos');
     }
+
     if (this.pass === '1234') {
       if (this.seleccionadoValor === 'Profesor') {
         alert('Es profesor ' + this.correo);
@@ -66,5 +67,4 @@ export class LoginComponent implements OnInit {
       alert('Datos no validos');
     }
   }
-
 }
