@@ -16,6 +16,10 @@ const rutas: Routes = [
     component: IniciarSesionComponent,
   },
   {
+    path: 'usuario',
+    loadChildren: () => import('./usuario/usuario.module').then(mod => mod.UsuarioModule),
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
