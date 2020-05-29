@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/Router';
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -18,9 +19,21 @@ export class LoginComponent implements OnInit {
   sugerencias = ['Estudiante', 'Profesor', 'XD'];
   constructor(
     private readonly _router: Router,
+    private readonly _loginService: LoginService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this._loginService
+      .metodoGet('http://localhost:1337/usuario')
+      .subscribe((resultadoMetodoGet) => {
+        console.log('Respuest de Get');
+        console.log(resultadoMetodoGet);
+      });
+  }
+  seteoValorSeleccionado(eventoSeleecionado) {
+    console.log(eventoSeleecionado);
+    this.valorSeleccionado = eventoSeleecionado;
+  }
 
   buscarSugerencia(evento) {
     console.log(evento.query);
@@ -43,7 +56,22 @@ export class LoginComponent implements OnInit {
   }
 
   ingresar() {
-    console.log(this.valorAutocomplete);
+    this._loginService
+      .metodoPost(
+        'http://localhost:1337/usuario',
+        {
+          nombre: "kevin",
+          edad: this.pass,
+          correo: this.email,
+          esCasado: true
+        }
+      )
+      .subscribe(
+        (resultadoPost )=> {
+          console.log('Respuest de Post');
+          console.log(resultadoPost);
+        }
+      )
     if (this.pass === '1234' && this.seleccionadoValor === 'Estudiante') {
       alert('Es estudiante ' + this.correo);
       this._router.navigate(['/estudiante', 'perfil']);
@@ -53,6 +81,15 @@ export class LoginComponent implements OnInit {
     } else {
       alert('Datos no validos');
     }
+  }
+  eliminarRegitroPorId(){
+    this._loginService
+      .metodoDelete('http://localhost:1337/usuario/2').subscribe(
+      (respuestDelete) => {
+        console.log(' repuesta de delete');
+        console.log(respuestDelete);
+      }
+    )
   }
 }
 

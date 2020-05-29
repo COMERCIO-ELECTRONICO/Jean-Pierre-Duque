@@ -15,6 +15,8 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { CommonModule } from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
+import {LoginService} from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,12 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     AutoCompleteModule,
     UsuarioModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    LoginService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
