@@ -1,10 +1,10 @@
-import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/Router';
 import { HomeComponent } from './home/home.component';
 import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { LoginComponent } from './login/login.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 const rutas: Routes = [
   {
@@ -16,20 +16,18 @@ const rutas: Routes = [
     component: IniciarSesionComponent,
   },
   {
-    path: 'usuario',
-    loadChildren: () => import('./usuario/usuario.module').then(mod => mod.UsuarioModule),
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
     path: 'estudiante/perfil',
     component: PerfilUsuarioComponent,
   },
   {
-    path: 'profesor/perfil',
-    component: PerfilUsuarioComponent,
+    path: 'usuario',
+    loadChildren: () =>
+      import('./usuario/usuario.module')
+      .then(mod => mod.UsuarioModule),
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '',
@@ -47,4 +45,4 @@ const rutas: Routes = [
   providers: [],
   exports: [RouterModule],
 })
-export class AppRoutes { }
+export class AppRoutes {}

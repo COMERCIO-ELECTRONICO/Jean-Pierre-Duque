@@ -5,7 +5,7 @@ import { InfoUserComponent } from './info-user/info-user.component';
 
 const rutas: Routes = [
   {
-    path: ':nombre/info',
+    path: ':id/:nombre/info',
     component: InfoUserComponent,
   },
 ];

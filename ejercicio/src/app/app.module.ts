@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { AutoCompleteModule } from 'primeng/autocomplete';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { CommonModule } from '@angular/common';
@@ -33,9 +33,10 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     FormsModule,
     AutoCompleteModule,
-    UsuarioModule
+    UsuarioModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
