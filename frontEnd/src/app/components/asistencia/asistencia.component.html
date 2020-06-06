@@ -1,0 +1,41 @@
+<div class="container text center">
+  <form class="" action="index.html" method="post">
+    <label for="">DATOS DE ASISTENCIA </label>
+    <hr>
+
+    <li>
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="text" pInputText size="40" placeholder="Escriba la actividad" required [(ngModel)]="nombreactividad" name="nombre">
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </li>
+    <li>
+      <div class="row">
+
+        <input type="text" name="horario" required [(ngModel)]="horario">
+      </div>
+
+    </li>
+
+    <li>
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="datetime-local" name="fechainicio"  required [(ngModel)]="fechainicio">
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+
+          <input type="datetime-local" name="fechafin" required [(ngModel)]="fechafin">
+        </div>
+      </div>
+    </li>
+    <div class="">
+      <button type="submit " class="btn btn-success" name="registroAsistencia" (click)="regasistencia()">Registrar</button>
+    </div>
+
+  </form>
+</div>

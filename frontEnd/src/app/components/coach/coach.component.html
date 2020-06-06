@@ -1,0 +1,133 @@
+<div class="container">
+  <form>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label>Nombres</label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="text" pInputText size="40" placeholder="Escriba sus nombres" required [(ngModel)]="nombre"
+          name="nombre">
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label>Apellidos</label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="text" pInputText size="40" placeholder="Escriba sus apellidos" required [(ngModel)]="apellido"
+          name="apellido">
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label>Dirección</label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="text" pInputText size="40" placeholder="Av....." required [(ngModel)]="direccion"
+          name="direccion">
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label>Teléfono</label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="number" required placeholder="09xxxxxxxx" [(ngModel)]="telefono" name="telefono">
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label>Email</label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="email" required placeholder="@gmail,hotmail" [(ngModel)]="email" name="email">
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label>Contraseña</label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="password" pPassword size="40" required placeholder="******" [(ngModel)]="password"
+          name="password">
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label>Especialidad</label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="text" required placeholder="Culturismo" [(ngModel)]="especialidad" name="especialidad">
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+
+  </form>
+  <div class="row">
+    <div class="col-sm-12"><br></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <button class="btn btn-success btn-block" (click)="agregar()">
+        Registrar
+      </button>
+      <div class="">
+
+          <ol *ngFor="let r of adminList">
+              {{ r.nombre }}
+               {{ r.apellido }}
+              <button class="btn btn-info btn-block" (click)="actualizar(r.id)">
+                  Actualizar
+              </button>
+              <button class="btn btn-danger btn-block" (click)="eliminar(r.id)">
+                Eliminar
+              </button>
+          </ol>
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,129 @@
+<div class="container">
+  <form>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label><strong>Nombres</strong></label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="text" pInputText size="40" placeholder="Escriba sus nombres" required [(ngModel)]="nombre"
+          name="nombre">
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label><strong>Apellidos</strong></label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="text" pInputText size="40" placeholder="Escriba sus apellidos" required [(ngModel)]="apellido"
+          name="apellido">
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label><strong>Correo</strong></label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="email" pInputText size="40" placeholder="ejemplo@xxxx.com" required [(ngModel)]="correo"
+          name="correo">
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label><strong>Contraseña</strong></label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="password" pPassword size="40" required placeholder="******" [(ngModel)]="contrasenia"
+          name="contrasenia">
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label><strong>Cédula de identidad</strong></label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="number" required placeholder="170101010101" [(ngModel)]="ci" name="ci">
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label>Dirección</label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="text" required size="40" placeholder="Av. Colón y la que crusa" [(ngModel)]="direccion"
+          name="direccion">
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <label><strong>Teléfono</strong></label>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <input type="number" required placeholder="09xxxxxxxx" [(ngModel)]="telefono" name="telefono"><div class="col-sm-4"></div>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-sm-12"><br></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <button class="btn btn-danger btn-block" (click)="registrar()">
+        <strong>Registrar</strong>
+      </button>
+      <div class="col-sm-4"></div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <button class="btn btn-danger btn-block" [routerLink]="['/login']"><strong>
+        Tengo una cuenta </strong>
+      </button>
+      <div class="col-sm-4"></div>
+    </div>
+  </div>
+
+</div>

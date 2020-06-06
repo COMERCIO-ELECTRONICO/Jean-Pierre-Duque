@@ -1,0 +1,36 @@
+.carousel-responsive {
+  width: 100%;
+}
+.img2 {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.img1p {
+  text-align: center;
+  font-size: 58px;
+  display: block;
+
+}
+.jumbotron{
+background: red;
+}
+.text{
+  text-align: justify;
+  font-size: 18px;
+  -webkit-text-stroke: 0.5px black;
+}
+.container
+{
+  background-image: url(https://i.imgur.com/ts3Q66r.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  color: white !important;
+
+}
+
