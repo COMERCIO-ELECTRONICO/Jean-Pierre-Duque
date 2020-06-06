@@ -17,6 +17,7 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { CommonModule } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginService} from './services/login.service';
+import { LoginGuard } from './guards/login.guard';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {LoginService} from './services/login.service';
   ],
   providers: [
     LoginService,
+    LoginGuard
   ],
   bootstrap: [AppComponent],
 })

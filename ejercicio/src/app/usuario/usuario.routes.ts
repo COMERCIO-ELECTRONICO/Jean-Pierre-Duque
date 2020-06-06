@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/Router';
+import { Routes, RouterModule } from '@angular/router';
 import { InfoUserComponent } from './info-user/info-user.component';
 
 
